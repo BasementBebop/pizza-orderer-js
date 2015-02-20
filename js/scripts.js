@@ -16,12 +16,18 @@ $(document).ready(function() {
     var newTopping = $("[name=topping]:checked").val();
     var newSliceArea = parseInt($("input#slice-area").val());
     var newPizza = Object.create(Pizza);
-    newPizza.size = newSize;
-    newPizza.topping = newTopping;
-    newPizza.sliceArea = newSliceArea;
+    if(isNaN(newSize)) {
+      alert("Please enter a valid pizza size");
+    } else {
+      if(isNaN(newSliceArea)) {
+        newSliceArea = 15
+      };
+      newPizza.size = newSize;
+      newPizza.topping = newTopping;
+      newPizza.sliceArea = newSliceArea;
 
-    $(".order").append("<li>" + newPizza.size + " inch " + newPizza.topping + " pizza containing " + newPizza.findSlices() + " slices</li>");
-    $(".order").show("slow");
-
+      $(".order").append("<li>" + newPizza.size + " inch " + newPizza.topping + " pizza containing " + newPizza.findSlices() + " slices</li>");
+      $(".order").show("slow");
+    };
   });
 });
