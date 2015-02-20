@@ -6867,3 +6867,6 @@ input[type="checkbox"] {
 .modal .close {
   color: #222222;
 }
+.order {
+  display: none;
+}
