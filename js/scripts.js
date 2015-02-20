@@ -3,7 +3,7 @@ var Pizza = {
   topping: "",
   sliceArea: 15,
   findSlices: function() {
-    var area = 3.14159 * ((size / 2) * (size / 2));
-    return parseInt(area / this.sliceArea); 
+    var area = 3.14159 * ((this.size / 2) * (this.size / 2));
+    return parseInt(area / this.sliceArea);
   }
 };
